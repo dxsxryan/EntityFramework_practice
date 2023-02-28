@@ -1,4 +1,5 @@
-﻿using EntityFramework02.Models;
+﻿using EntityFramework02;
+using EntityFramework02.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,8 @@ namespace EntityFramework01
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            var form = new Fix();
+            form.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -41,7 +43,8 @@ namespace EntityFramework01
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            var form = new Remove();
+            form.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
