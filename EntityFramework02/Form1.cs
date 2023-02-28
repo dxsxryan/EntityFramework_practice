@@ -84,7 +84,7 @@ namespace EntityFramework01
                     }
                 }
             }
-            catch (Exception ex) 
+            catch (Exception) 
             {
                 MessageBox.Show($"不要重複匯入csv檔");
             }

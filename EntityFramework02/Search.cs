@@ -24,17 +24,22 @@ namespace EntityFramework01
             ContactsModel context = new ContactsModel();
             int input = 0; 
             int.TryParse(textBox1.Text.Trim(), out input);
-            var search = context.ContactsTable.Where((x) => x.Id == textBox1.Text.Trim() || x.Name == textBox1.Text.Trim() || x.Kind == textBox1.Text.Trim());
+            var search = context.ContactsTable.Where((x) => x.Id == textBox1.Text.Trim() || x.Name == textBox1.Text.Trim() || x.Kind == textBox1.Text.Trim()).ToList();
             var search_int = context.ContactsTable.Where((x) => x.Count == input || x.Price == input);
-            if(search.Count() == 0 && search_int.Count() == 0)
+            
+            if (search.Count() == 0 && search_int.Count() == 0)
             {
                 MessageBox.Show("沒有找到該資料");
             }
             else
             {
-                var form = new ViewForm();
-                form.ShowDialog();
+                dataGridView1.DataSource = search;
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
